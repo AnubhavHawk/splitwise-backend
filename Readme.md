@@ -17,18 +17,18 @@
 1. **Clone the Repository:**
     - Clone the project repository to your local machine using Git:
       ```
-      git clone https://github.com/AnubhavHawk/splitwise-app
+      git clone https://github.com/AnubhavHawk/splitwise-backend
       ```
 
 2. **Navigate to the Project Directory:**
-    - Open a terminal or command prompt and navigate to the root directory of the cloned project (i.e., splitwise-app/):
+    - Open a terminal or command prompt and navigate to the root directory of the cloned project (i.e., splitwise-backend/):
       ```
-      cd ./splitwise-app
+      cd ./splitwise-backend
       ```
 
 3. **Database Configuration:**
     - Configure your PostgreSQL database by creating a new database **`splitwise`** and user for the project. You can do this using the `psql` command-line tool or a PostgreSQL administration tool like pgAdmin.
-    - Update the database configuration in the project's configuration files (`splitwise-app/src/main/resources/application.properties` or similar). Replace the values as per your database, URL (`spring.datasource.url`), username(`spring.datasource.username`), and password(`spring.datasource.password`).
+    - Update the database configuration in the project's configuration files (`splitwise-backend/src/main/resources/application.properties` or similar). Replace the values as per your database, URL (`spring.datasource.url`), username(`spring.datasource.username`), and password(`spring.datasource.password`).
 
 4. **Build the Project:**
     - Use Maven to build the project. In the project's root directory, run:
@@ -57,7 +57,7 @@
    - Second time when you try to run/build the application, it tries to re-insert the users, and it fails because of primary key constraint. You should see something like this on console
    - > ERROR: duplicate key value violates unique constraint
    - In order to avoid this, follow below steps if you are going to run the application <ins>second time (or later)</ins>:
-   1. Open the configuration file (`splitwise-app/src/main/resources/application.properties`) in a text editor
+   1. Open the configuration file (`splitwise-backend/src/main/resources/application.properties`) in a text editor
    2. Comment out this line 5 (spring.datasource.initialization-mode=always). Comments are added by placing `#` at the begining of the line.
    3. Once commented out, it will not try to persist the hard coded users again. You can now run the application again.
 
